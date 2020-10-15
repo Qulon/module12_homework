@@ -34,11 +34,8 @@ class SomeDevices {
 class WashingMachine extends SomeDevices {
     constructor(name, brand, creatingCountry, power, mode) {
         super(name, mode, power)
-        this.name = name
         this.brand = brand
         this.creatingCountry = creatingCountry
-        this.power = power
-        this.mode = mode
         this.getCreator = function () {
           console.log(`Устройство ${this.name} произведено в ${this.creatingCountry} компанией ${this.brand}`)
         }
@@ -48,12 +45,9 @@ class WashingMachine extends SomeDevices {
 class MusicCenter extends SomeDevices {
     constructor(name, brand, creatingCountry, size, power, mode) {
         super(name, mode, power)
-        this.name = name
         this.brand = brand
         this.creatingCountry = creatingCountry
         this.size = size
-        this.power = power
-        this.mode = mode
         this.getSize = function () {
           console.log(`Устройство ${this.name} имеет размер ${this.size}`)
         }
@@ -63,12 +57,9 @@ class MusicCenter extends SomeDevices {
 class Computer extends SomeDevices {
     constructor(name, brand, cost, specification, power, mode) {
         super(name, mode, power)
-        this.name = name
         this.brand = brand
         this.cost = cost
         this.specification = specification
-        this.power = power
-        this.mode = mode
         this.getSpecification = function () {
           console.log(`Устройство ${this.name} имеет следующие характеристики: ${this.specification}`)
         }
@@ -101,3 +92,5 @@ function countingPowerConsumption(...obj) {
 }
 
 countingPowerConsumption(washingMachine, musicCenter, computer)
+
+// Небольшое замечание: в дочерних классах вы используете родительский конструктор, который принимает свойства name, mode и power, поэтому нет необходимости присваивать эти свойства и в дочернем конструкторе, вы просто записываете их по второму разу. Так что для оптимизации эти строчки лучше убрать.
