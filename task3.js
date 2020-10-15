@@ -7,6 +7,7 @@ const emptyObject = () => {
 }
 
 console.log(emptyObject) // [Function: emptyObject]
+// В строчке выше выводится [Function: emptyObject], потому что вы передаете в консоль саму функцию, не вызывая её. Если вызвать функцию (т.е. написать emptyObject() вместо emptyObject), в консоль будет выводится объект, как и во втором варианте. Они почти на 100% аналогичны :)
 
 function createEmptyObject() {
     return Object.create(null)
